@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: advikbalanpipelinesjavascriptdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: advikbalanpipelinesjavascriptdocker
+  template:
+    metadata:
+      labels:
+        app: advikbalanpipelinesjavascriptdocker 
+    spec:
+      containers:
+        - name: advikbalanpipelinesjavascriptdocker 
+          image: azureakscicd.azurecr.io/advikbalanpipelinesjavascriptdocker
+          ports:
+          - containerPort: 8080
